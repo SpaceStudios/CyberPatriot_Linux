@@ -10,3 +10,4 @@ adminstrators=()
 
 echo How many users are there on the system?
 read userCount
+echo $userCount
