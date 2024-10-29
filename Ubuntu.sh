@@ -36,4 +36,27 @@ done
 #sudo ufw enable
 #sudo ufw status
 
+sudo nano /etc/login.defs
+#PASS_MAX_DAYS 90
+#PASS_MIN_DAYS 7
+#PASS_WARN_AGE 14
+#LOGIN_RETRIES 3
+#LOGIN_TIMEOUT 30
+#ENCRYPT_METHOD SHA512
+
+sudo nano /etc/sysctl.conf
+#net.ipv6.conf.all.disable_ipv6 = 1
+#net.ipv4.tcp_syncookies = 1
+#net.ipv4.icmp_echo_ignore_broadcasts = 1
+#net.ipv4.conf.all.send_redirects = 0
+#net.ipv4.conf.all.log_martians = 1
+#net.ipv4.ip_forward = 0
+#net.ipv4.icmp_echo_ignore_all = 1
+#net.ipv4.conf.all.secure_redirects = 0
+
+sudo nano /etc/ssh/sshd_config
+#PermitRootLogin=no
+
+#sudo systemctl
+
 sudo rm -r $fileName
