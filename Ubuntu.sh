@@ -30,6 +30,12 @@ for user in $(cut -d: -f1,3 /etc/passwd | egrep ':[0-9]{4}$' | cut -d: -f1); do
     echo $user
     sudo passwd $user
     #Password should always be set to S3CUR3D_4O4
+    if [[ ${users[@]} =~ $user ]] then
+        echo $user
+    else
+        echo $user is not a valid user on this system
+        sudo userdel $user
+    fi
 done
 
 for user in $(); do
